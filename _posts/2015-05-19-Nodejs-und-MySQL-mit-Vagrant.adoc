@@ -1,10 +1,45 @@
-# Hallo Welt!
+# Node.js und MySQL mit Vagrant
 
-Hier etwas Code:
+Für die Entwicklung von Node.js-Applikationen habe ich mir eine Laufzeitumgebung mit Vagrant eingerichtet, um nicht ständig mein System beschmutzen zu müssen. Die Vorteile liegen klar auf der Hand. Eine klar abgegrenzte virtuelle Maschine sorgt für die Bereitstellung meiner Systemumgebung, während ich mit meinen lokalen Werkzeugen bequem althergebracht an meinem Code schrauben kann.
 
-....
-var x = 2;
-for(var i = 0; i <= 10; i++) {
-	console.log(i*x);
-}
-....
+Die Einrichtung hat mich einige Mühe und die Hilfe verschiedener Quellen gekostet, letztendlich bin ich jedoch am Ziel angelangt, zumindest eine erste Basis für weitere Entwicklungen zu legen.
+
+## Installation der vorrausgesetzten Tools
+
+Folgende Tools werden benötigt und sollten vor Beginn installiert werden:
+
+- Vagrant
+- Node.js
+- npm
+- Texteditor
+
+## Initialisierung des Vagrant-Projekts
+
+Zuerst lege ich ein Projektverzeichnis an und initialisiere dort mein Vagrant-File.
+
+[source,bash]
+----
+mkdir project
+cd project
+vagrant init
+----
+
+Hiernach sieht mein Verzeichnis wie folgt aus.
+
+----
++ project
+|- Vagrantfile
+----
+
+In der Vagrantfile sind ein paar grundlegende Dinge vorhanden, diese ersetze ich jedoch durch folgende Einträge.
+
+[source,ruby]
+----
+Vagrant.configure("2") do |config|
+  config.vm.box = "hashicorp/precise64"
+  config.vm.provision :shell, path: "bootstrap.sh"
+  config.vm.network :forwarded_port, guest: 3000, host: 3000
+end
+----
+
+Wie man sieht, wähle ich als Grundlage Ubuntu aus, auf dem ich ein Vorbereitunsscript ausführe (dazu mehr im nächsten Schritt). Letztendlich sehe ich künftig Port 3000 für die Kommunikation mit meiner Applikation vor.

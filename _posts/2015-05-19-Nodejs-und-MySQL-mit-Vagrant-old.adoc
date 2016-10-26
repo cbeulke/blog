@@ -1,4 +1,4 @@
-# Node.js und MySQL mit Vagrant
+# Node.js und MySQL mit Vagrant (old)
 
 Für die Entwicklung von *Node.js*-Applikationen habe ich mir eine Laufzeitumgebung mit *Vagrant* eingerichtet, um nicht ständig mein System beschmutzen zu müssen. Die Vorteile liegen klar auf der Hand. Eine klar abgegrenzte virtuelle Maschine sorgt für die Bereitstellung meiner Systemumgebung, während ich mit meinen lokalen Werkzeugen bequem althergebracht an meinem Code schrauben kann.
 

@@ -1,3 +1,16 @@
 <header>
-	<h1></h1>
+	<nav class="ui top fixed menu">
+		<div class="ui container">
+			{% for item in site.data.nav %}
+				{% if page.url == item.url %}
+					<a class="active item" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+				{% else %}
+					<a class="item" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+				{% endif %}
+			{% endfor %}
+			<div class="right item">
+				<h2 class="ui header">Web & Apps</h2>
+			</div>
+		</div>
+	</nav>
 </header>

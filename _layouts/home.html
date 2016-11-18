@@ -1,4 +1,18 @@
 ---
 layout: default
 ---
-<h1>Home</h1>
+<div class="ui items">
+	{% for post in site.posts %}
+		<div class="item">
+			<div class="content">
+				<a class="header" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+				<div class="meta">
+					<span class="date">{{ post.date | date_to_string }}</span>
+				</div>
+				<div class="description">
+					<p>{{ post.excerpt }}</p>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+</div>

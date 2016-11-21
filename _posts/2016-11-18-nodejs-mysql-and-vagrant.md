@@ -1,6 +1,6 @@
 ---
 layout: 	post
-title: 		"Node.js und MySQL mit Vagrant"
+title: 		"Node.js, MySQL and Vagrant"
 date:   	2016-11-18 12:00:00 +0100
 comments: 	true
 ---

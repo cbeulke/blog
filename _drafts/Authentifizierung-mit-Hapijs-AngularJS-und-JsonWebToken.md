@@ -1,1 +1,0 @@
-# Authentifizierung mit Hapi.js, AngularJS und JsonWebToken

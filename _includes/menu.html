@@ -1,0 +1,23 @@
+<!-- Following menu -->
+<div class="ui large top fixed menu transition hidden">
+	<div class="ui container">
+		{% for item in site.data.nav %}
+			{% if page.url == item.url %}
+				<a class="active item" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+			{% else %}
+				<a class="item" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>
+
+<!-- Sidebar menu -->
+<div class="ui vertical inverted sidebar menu left">
+	{% for item in site.data.nav %}
+		{% if page.url == item.url %}
+			<a class="active item" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+		{% else %}
+			<a class="item" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+		{% endif %}
+	{% endfor %}
+</div>

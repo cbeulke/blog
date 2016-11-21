@@ -1,6 +1,9 @@
-<header>
-	<nav class="ui top fixed menu">
-		<div class="ui container">
+<header class="ui inverted vertical masthead center aligned segment">
+	<div class="ui container">
+		<nav class="ui large secondary inverted pointing menu">
+			<a class="toc item">
+				<i class="sidebar icon"></i>
+			</a>
 			{% for item in site.data.nav %}
 				{% if page.url == item.url %}
 					<a class="active item" href="{{ item.url | relative_url }}">{{ item.title }}</a>
@@ -8,9 +11,6 @@
 					<a class="item" href="{{ item.url | relative_url }}">{{ item.title }}</a>
 				{% endif %}
 			{% endfor %}
-			<div class="right item">
-				<h2 class="ui header">Web & Apps</h2>
-			</div>
-		</div>
-	</nav>
+		</nav>
+	</div>
 </header>

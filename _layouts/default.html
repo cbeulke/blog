@@ -2,13 +2,21 @@
 <html>
 	{% include head.html %}
 
-	<body style="padding-top: 85px;">
-		{% include header.html %}
+	<body class="pushable">
+		{% include menu.html %}
 
-		<content class="ui container">
-			{{ content }}
-		</content>
+		<div class="pusher">
+			{% include header.html %}
 
-		{% include footer.html %}
+			<content>
+				<div class="ui vertical stripe segment">
+					<div class="ui container">
+						{{ content }}
+					</div>
+				</div>
+			</content>
+
+			{% include footer.html %}
+		</div>
 	</body>
 </html>
